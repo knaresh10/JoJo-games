@@ -7,11 +7,11 @@ router.get('/', (req, res) => {
 })
 
 router.get('/sudoku', (req, res) => {
-    res.render('sudoku')
+    res.render('games/sudoku')
 })
 
 router.get('/tic-tac-toe', (req, res) => {
-    res.render('tic-tac-toe')
+    res.render('games/tic_tac_toe')
 })
 
 router.get('/snake', (req, res) => {
@@ -19,11 +19,11 @@ router.get('/snake', (req, res) => {
 })
 
 router.get('/chess', (req, res) => {
-    res.render('chess')
+    res.render('games/chess')
 })
 
 router.get('/block', (req, res) => {
-    res.render('block')
+    res.render('games/block')
 })
 
 

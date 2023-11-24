@@ -19,7 +19,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/JoJo-games').then(
 )
 
 app.set('view engine', 'ejs')
-app.set('games', path.resolve('./views/games'))
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(checkForAuthentication('token'))
