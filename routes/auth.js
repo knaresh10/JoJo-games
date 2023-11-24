@@ -24,16 +24,10 @@ router.post('/signIn', async (req, res) => {
     const {userName, password} = req.body
     try {
         const token = await User.matchPasswordAndGenerateToken(userName, password)
-        // console.log(user)
-        // console.log(req.user)
-        res.cookie('token', token).render('main', {
-            user : req.user
-        })
+        res.cookie('token', token).redirect('/main')
     } catch(e) {
         console.log('error has happen')
     }
-
-    // res.redirect('/main')
 })
 
 module.exports = router
