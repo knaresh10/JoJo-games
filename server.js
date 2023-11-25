@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 
 
 const authRouter = require('./routes/auth')
-const mainRouter = require('./routes/main')
+const gamesRouter = require('./routes/games')
 const {checkForAuthentication} = require('./middleware/authentication')
 
 
@@ -22,15 +22,14 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(checkForAuthentication('token'))
-app.use(express.static(path.resolve('public')))
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
     res.render('home')
 })
 
-
 app.use('/auth', authRouter)
-app.use('/main', mainRouter)
+app.use('/games', gamesRouter)
 app.listen(port, () => {
     console.log(`Server is running in http://localhost:${port}`)
 })

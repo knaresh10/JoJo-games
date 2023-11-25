@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/background.css" />
-    <link rel="stylesheet" href="/css/home.css" />
+    <%- include('./partials/head.ejs') %>
     <title>Home Page</title>
   </head>
   <body>
-    <%- include('./partials/background.ejs') %>
-    <div class="container">
-      <h1>Welcome to JoJo Games</h1>
-      <a href="/auth/register">Register</a>
-      <a href="/auth/signIn">Sign In</a>
+    <div class="bg-white">
+      <%- include('./partials/nav.ejs') %>
+      <div class="relative isolate px-6 pt-14">
+        <div class="mx-auto max-w-2xl py-32">
+          <div class="text-center">
+            <h1 class="text-4xl font-bold tracking-tighter text-gray-900">
+              Welcome To JoJo Games
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+              dolores eaque, debitis, laudantium ab ipsum, repellendus unde
+              praesentium cumque fugit dignissimos saepe eveniet dolorum
+              explicabo vel quo aperiam quod error.
+            </p>
+            <div class="mt-10">
+              <a
+                href="/auth/register"
+                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-smhover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >Register</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

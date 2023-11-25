@@ -24,7 +24,7 @@ router.post('/signIn', async (req, res) => {
     const {userName, password} = req.body
     try {
         const token = await User.matchPasswordAndGenerateToken(userName, password)
-        res.cookie('token', token).redirect('/main')
+        res.cookie('token', token).redirect('/')
     } catch(e) {
         console.log('error has happen')
     }

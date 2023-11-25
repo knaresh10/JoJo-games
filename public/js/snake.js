@@ -147,6 +147,7 @@ document.addEventListener('keydown',function(event){
 
 
 function GameOver(){
+    
     clearInterval(intervalId);
     document.getElementById('message').style.display = 'block';
     setTimeout(()=>{
