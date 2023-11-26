@@ -25,7 +25,9 @@ app.use(checkForAuthentication('token'))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home', {
+        user: req.user
+    })
 })
 
 app.use('/auth', authRouter)

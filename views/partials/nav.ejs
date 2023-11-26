@@ -1,10 +1,99 @@
 <header class="absolute inset-x-0 top-0 z-50">
   <nav class="flex items-center justify-between p-6">
-    <a href="/" class="text-base font-semibold leading-6 text-gray-900"
+    <a href="/" class="text-base font-semibold leading-6 text-slate-200"
       >JoJo Games</a
     >
-    <a href="/auth/signIn" class="text-sm font-semibold leading-6 text-gray-900"
+    <% if (locals.user) { %>
+
+    <div class="relative ml-3">
+      <div>
+        <button
+          type="button"
+          class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+          id="user-menu-button"
+          aria-expanded="false"
+          aria-haspopup="true"
+          onclick="toggleMenu()"
+        >
+          <span class="absolute -inset-1.5"></span>
+          <span class="sr-only">Open user menu</span>
+          <img
+            class="h-8 w-8 rounded-full"
+            src="https://img.freepik.com/free-vector/hand-drawn-korean-drawing-style-character-illustration_23-2149623257.jpg?w=900&t=st=1700981812~exp=1700982412~hmac=ce71203432ddddcf26d8dba864f9f7de4ee24bd4c5a2b0c1571b32e9444dff81"
+            alt=""
+          />
+        </button>
+      </div>
+
+      <!--
+          Dropdown menu, show/hide based on menu state.
+
+          Entering: "transition ease-out duration-100"
+            From: "transform opacity-0 scale-95"
+            To: "transform opacity-100 scale-100"
+          Leaving: "transition ease-in duration-75"
+            From: "transform opacity-100 scale-100"
+            To: "transform opacity-0 scale-95"
+        -->
+      <div
+        class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden user-menu-dropdown"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="user-menu-button"
+        tabindex="-1"
+      >
+        <!-- Active: "bg-gray-100", Not Active: "" -->
+        <a
+          href="#"
+          class="block px-4 py-2 text-sm text-gray-700"
+          role="menuitem"
+          tabindex="-1"
+          id="user-menu-item-0"
+          >Your Profile</a
+        >
+        <!-- <a
+          href="#"
+          class="block px-4 py-2 text-sm text-gray-700"
+          role="menuitem"
+          tabindex="-1"
+          id="user-menu-item-1"
+          >Settings</a
+        > -->
+        <a
+          href="/auth/signOut"
+          class="block px-4 py-2 text-sm text-gray-700"
+          role="menuitem"
+          tabindex="-1"
+          id="user-menu-item-2"
+          >Sign out</a
+        >
+      </div>
+    </div>
+    <!-- <a
+      href="/auth/signIn"
+      class="text-sm font-semibold leading-6 text-slate-200"
+      > user.fullName %> <span>&rarr;</span></a
+    > -->
+    <% } else { %>
+    <a
+      href="/auth/signIn"
+      class="text-sm font-semibold leading-6 text-slate-200"
       >sign in <span>&rarr;</span></a
     >
+    <% } %>
   </nav>
 </header>
+
+<script>
+  // Function to toggle the visibility of the dropdown menu
+  function toggleMenu() {
+    var menu = document.querySelector(".user-menu-dropdown");
+    var isExpanded = menu.getAttribute("aria-expanded") === "true";
+
+    // Toggle the aria-expanded attribute
+    menu.setAttribute("aria-expanded", !isExpanded);
+
+    // Toggle the visibility of the dropdown menu
+    menu.classList.toggle("hidden");
+  }
+</script>
