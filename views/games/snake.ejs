@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/snake.css">
-    <script src="/js/snake.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/snake.css" />
     <title>Snake Game</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="heading">
-        <a href="/main"><h1 id="head">JOJO GAMES</h1></a>
+      <a href="/main"><h1 id="head">JOJO GAMES</h1></a>
     </div>
     <h1>SNAKE GAME</h1>
     <div id="buttons">
-        <button id="start" onclick="SetBoard()">START</button>
+      <button id="start" onclick="SetBoard()">START</button>
     </div>
-    <hr>
+    <hr />
     <div id="board">
-        <p id="message">Game Over</p>
+      <p id="message">Game Over</p>
     </div>
-    
-</body>
+    <script>
+      const userId = "<%= user._id %>";
+    </script>
+    <script src="/js/snake.js"></script>
+  </body>
 </html>

@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <%- include('./partials/head.ejs') %>
     <title>Home</title>
   </head>
-  <body>
-    <div id="heading">
-      <a href="/main"><h1 id="head">JOJO GAMES</h1></a>
-    </div>
-
-    <div id="games">
-      <a href="/main/sudoku">
-        <div id="game">
-          <div id="sudoku"></div>
-          <p>SUDOKU</p>
+  <body class="bg-slate-950 h-screen">
+    <%- include('./partials/nav.ejs') %>
+    <section class="w-full pt-16">
+      <div class="text-white flex flex-col">
+        <div class="mx-auto py-5 max-w-2xl text-center">
+          <h2 class="text-4xl font-bold tracking-tighter text-slate-200">
+            Games
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-slate-300">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati
+            in cupiditate soluta sed repudiandae eos
+          </p>
         </div>
-      </a>
+        <div class="mt-6 flex items-center justify-evenly p-10">
+          <div
+            class="bg-slate-900 rounded-xl flex flex-col w-28 hover:bg-slate-800"
+          >
+            <div class="mx-auto">
+              <img src="/images/sudoku.png" class="h-24 w-24" alt="" />
+            </div>
+            <a href="/games/sudoku">
+              <p class="text-slate-50 text-2xl text-center -m-1 p-4">Sudoku</p>
+            </a>
+          </div>
 
-      <a href="/main/tic-tac-toe">
-        <div id="game">
-          <div id="tic_tac_toe"></div>
-          <p>TIC TAC TOE</p>
-        </div>
-      </a>
+          <div
+            class="bg-slate-900 rounded-xl flex flex-col w-28 hover:bg-slate-800"
+          >
+            <div class="mx-auto">
+              <img src="/images/tic_tac_toe.png" class="h-24 w-24" alt="" />
+            </div>
+            <a href="/games/tic-tac-toe">
+              <p class="text-slate-50 text-2xl text-center -m-1 p-4">
+                Tic Tac Toe
+              </p>
+            </a>
+          </div>
 
-      <a href="/main/snake">
-        <div id="game">
-          <div id="snake"></div>
-          <p>SNAKE GAME</p>
-        </div>
-      </a>
+          <div
+            class="bg-slate-900 rounded-xl flex flex-col w-28 hover:bg-slate-800"
+          >
+            <div class="mx-auto">
+              <img src="/images/snake.png" class="h-24 w-24" alt="" />
+            </div>
+            <a href="/games/snake">
+              <p class="text-slate-50 text-2xl text-center -m-1 p-4">Snake</p>
+            </a>
+          </div>
 
-      <a href="/main/chess">
-        <div id="game">
-          <div id="chess"></div>
-          <p>CHESS GAME</p>
-        </div>
-      </a>
+          <div
+            class="bg-slate-900 rounded-xl flex flex-col w-28 hover:bg-slate-800"
+          >
+            <div class="mx-auto">
+              <img src="/images/chess.png" class="h-24 w-24" alt="" />
+            </div>
+            <a href="/games/chess">
+              <p class="text-slate-50 text-2xl text-center -m-1 p-4">Chess</p>
+            </a>
+          </div>
 
-      <a href="/main/block">
-        <div id="game">
-          <div id="block"></div>
-          <p>BLOCK GAME</p>
+          <div
+            class="bg-slate-900 rounded-xl flex flex-col w-28 hover:bg-slate-800"
+          >
+            <div class="mx-auto">
+              <img src="/images/block.webp" class="h-24 w-24" alt="" />
+            </div>
+            <a href="/games/block">
+              <p class="text-slate-50 text-2xl text-center -m-1 p-4">Block</p>
+            </a>
+          </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </section>
   </body>
 </html>

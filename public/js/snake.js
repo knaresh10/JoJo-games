@@ -7,7 +7,6 @@ let speed = 500;
 let kk = 0;
 let intervalId;
 
-
 function redDiv(){
     redDivRow = Math.floor(Math.random()*45);
     redDivCol = Math.floor(Math.random()*48);
@@ -15,16 +14,12 @@ function redDiv(){
     document.getElementById(c).style.backgroundColor = 'red';
 }
 
-
-
 function SetScore(){
     score++;
     let a = document.getElementById("score");
     a.innerText = score;
     if(score == 5) speed = 50;
 }
-
-
 
 function SetBoard(){
     document.getElementById('start').remove();
@@ -56,8 +51,6 @@ function SetBoard(){
     solve();
 }
 
-
-
 function solve(){
     console.log(speed);
     intervalId = setInterval(function(){
@@ -71,11 +64,8 @@ function solve(){
             snakeBody[i] = snakeBody[i-1];
         }
 
-        
         let c = aa + '-' + bb;
         let blueDiv = document.getElementById(c);
-
-        
 
         if(blueDivCol + y >= 0 && blueDivCol + y < 48 && blueDivRow + x >= 0 && blueDivRow + x < 45){
             blueDiv.style.backgroundColor = '';
@@ -98,8 +88,6 @@ function solve(){
             let nextRowId = snakeBody[i][0] + '-' + snakeBody[i][1];
             document.getElementById(nextRowId).style.backgroundColor = 'blue';
         }
-
-        
 
     },200);
 }
@@ -145,14 +133,13 @@ document.addEventListener('keydown',function(event){
     }         
 });
 
-
 function GameOver(){
-    
     clearInterval(intervalId);
     document.getElementById('message').style.display = 'block';
     setTimeout(()=>{
         window.location.reload();
     },2000);
+    console.log(userId)
 }
 
 function check(snakeBody,row,col){

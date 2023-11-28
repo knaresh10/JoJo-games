@@ -3,7 +3,9 @@ const {Router} = require('express')
 const router = Router()
 
 router.get('/', (req, res) => {
-    res.render('games')
+    res.render('games', {
+        user: req.user
+    })
 })
 
 router.get('/sudoku', (req, res) => {
@@ -15,7 +17,9 @@ router.get('/tic-tac-toe', (req, res) => {
 })
 
 router.get('/snake', (req, res) => {
-    res.render('games/snake')
+    res.render('games/snake', {
+        user: req.user
+    })
 })
 
 router.get('/chess', (req, res) => {
