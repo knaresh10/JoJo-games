@@ -3,11 +3,9 @@ const path = require('path')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 
-
 const authRouter = require('./routes/auth')
 const gamesRouter = require('./routes/games')
 const {checkForAuthentication} = require('./middleware/authentication')
-
 
 const app = express()
 const port = process.env.port || 8000
@@ -23,6 +21,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(checkForAuthentication('token'))
 app.use(express.static(__dirname + '/public'))
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.render('home', {

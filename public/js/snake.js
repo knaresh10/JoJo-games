@@ -1,3 +1,5 @@
+
+
 let snakeBody = []
 let redDivRow , redDivCol;
 let score = 0;
@@ -136,10 +138,27 @@ document.addEventListener('keydown',function(event){
 function GameOver(){
     clearInterval(intervalId);
     document.getElementById('message').style.display = 'block';
+    console.log(JSON.stringify({gameId, userId, score}))
+    fetch('/games/gameover', {
+        method: 'post',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({gameId, userId, score})
+      })
+        // .then(response => {
+        //   if (!response.ok) {
+        //     throw new Error(`HTTP error! Status: ${response.status}`);
+        //   }
+        //   return response.json();
+        // })
+        // .then(data => console.log(data))
+        // .catch(error => {
+        //   console.error('Error during game over:', error);
+        // });      
     setTimeout(()=>{
         window.location.reload();
     },2000);
-    console.log(userId)
 }
 
 function check(snakeBody,row,col){

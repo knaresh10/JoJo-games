@@ -6,7 +6,7 @@ const gameSchema= new Schema({
         required: true,
         unique: true
     },
-    leaderBoard: [
+    leaderboard: [
         {
             user: {
                 type: Schema.Types.ObjectId,
